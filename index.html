@@ -8,11 +8,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
   <link rel="stylesheet" href="mapa-saude-salvador.css">
-<header>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
 </head>
 <body>
+
+<header>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
   <div class="header-brand">
     <div class="brand-icon">🏥</div>
@@ -27,8 +27,20 @@
     <input type="text" id="searchInput" placeholder="Buscar unidade, bairro ou tipo...">
   </div>
 
+  <!-- VIEW MODE TOGGLE -->
+  <div class="view-toggle">
+    <button class="view-btn active" id="btnUnidades" onclick="setViewMode('unidades')">
+      <span class="view-btn-icon">📍</span> Unidades
+    </button>
+    <button class="view-btn" id="btnIsovalor" onclick="setViewMode('isovalor')">
+      <span class="view-btn-icon">🌡️</span> Isovalores
+    </button>
+    <button class="view-btn" id="btnCritical" onclick="toggleCriticalAreas()">
+      <span class="view-btn-icon">⚠️</span> Críticas
+    </button>
+  </div>
+
   <div class="stats" id="statsBar">
-    
     <div class="stat-pill"><span class="stat-dot" style="background:var(--hospital)"></span> <span id="countHospital">0</span> Hospitais</div>
     <div class="stat-pill"><span class="stat-dot" style="background:var(--upa)"></span> <span id="countUpa">0</span> UPAs</div>
     <div class="stat-pill"><span class="stat-dot" style="background:var(--ubs)"></span> <span id="countUbs">0</span> UBS/USF</div>
@@ -37,7 +49,8 @@
 </header>
 
 <div class="main">
-  <div class="sidebar">
+  <!-- SIDEBAR UNIDADES -->
+  <div class="sidebar" id="sidebarUnidades">
     <div class="filters">
       <div class="filters-title">Filtrar por tipo</div>
       <div class="filter-btns">
@@ -78,10 +91,64 @@
     <div class="units-list" id="unitsList"></div>
   </div>
 
+  <!-- SIDEBAR ISOVALORES -->
+  <div class="sidebar hidden" id="sidebarIsovalor">
+    <div class="iso-controls">
+      <div class="filters-title">Métrica exibida</div>
+      <div class="iso-metric-btns">
+        <button class="iso-metric-btn active" data-metric="densidade" onclick="setMetric(this, 'densidade')">
+          🏗️ Densidade de Unidades
+        </button>
+        <button class="iso-metric-btn" data-metric="cobertura" onclick="setMetric(this, 'cobertura')">
+          👥 Cobertura Populacional
+        </button>
+        <button class="iso-metric-btn" data-metric="urgencia" onclick="setMetric(this, 'urgencia')">
+          🚨 Urgência / Emergência
+        </button>
+        <button class="iso-metric-btn" data-metric="especialidade" onclick="setMetric(this, 'especialidade')">
+          🔬 Serviços Especializados
+        </button>
+        <button class="iso-metric-btn" data-metric="saude_mental" onclick="setMetric(this, 'saude_mental')">
+          🧠 Saúde Mental
+        </button>
+        <button class="iso-metric-btn" data-metric="materno_infantil" onclick="setMetric(this, 'materno_infantil')">
+          👶 Materno-Infantil
+        </button>
+      </div>
+    </div>
+
+    <div class="critical-model">
+      <div class="filters-title">Modelo crítico (ajustável)</div>
+      <div class="slider-group">
+        <label>Cobertura ESF (<span id="wCoverageValue">45</span>%)<input type="range" id="wCoverage" min="0" max="100" value="45" oninput="updateCriticalModel()"></label>
+        <label>Leitos/1k (<span id="wLeitosValue">30</span>%)<input type="range" id="wLeitos" min="0" max="100" value="30" oninput="updateCriticalModel()"></label>
+        <label>Densidade (<span id="wDensityValue">25</span>%)<input type="range" id="wDensity" min="0" max="100" value="25" oninput="updateCriticalModel()"></label>
+      </div>
+    </div>
+
+    <div class="iso-legend-wrap">
+      <div class="filters-title">Gradiente de intensidade</div>
+      <div class="iso-legend" id="isoLegend">
+        <div class="legend-bar" id="legendBar"></div>
+        <div class="legend-labels">
+          <span>Baixo</span>
+          <span>Médio</span>
+          <span>Alto</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-header" style="margin-top:4px;">
+      <div class="list-count">Distritos Sanitários: <span style="color:var(--accent);font-weight:600;">12</span></div>
+    </div>
+
+    <div class="units-list" id="districtList"></div>
+  </div>
+
   <div id="map"></div>
 </div>
 
-<!-- Info overlay -->
+<!-- Info overlay unidade -->
 <div class="popup-overlay" id="infoPanel">
   <button class="popup-close" onclick="closePanel()">✕</button>
   <div class="popup-type" id="pType"></div>
@@ -99,6 +166,16 @@
     <a class="btn-link" id="pExternalLink" target="_blank" style="display:none">🔗 Acessar Link</a>
     <a class="btn-maps" id="pFichaLink" target="_blank" style="display:none; background:linear-gradient(135deg,#9b72ff,#7c4dff);">📋 Ver Ficha</a>
   </div>
+</div>
+
+<!-- Info overlay distrito (isovalor) -->
+<div class="popup-overlay" id="districtPanel">
+  <button class="popup-close" onclick="closeDistrictPanel()">✕</button>
+  <div class="popup-type" id="dpType" style="color:var(--accent)">DISTRITO SANITÁRIO</div>
+  <div class="popup-name" id="dpName"></div>
+  <div class="district-metrics-grid" id="dpMetrics"></div>
+  <div class="district-units-title">Unidades no distrito</div>
+  <div class="district-units-list" id="dpUnits"></div>
 </div>
 
 <script src="app.js"></script>
