@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa de Saúde — Salvador, Bahia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <link rel="stylesheet" href="mapa-saude-salvador.css">
+<header>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+</head>
+<body>
+
+  <div class="header-brand">
+    <div class="brand-icon">🏥</div>
+    <div class="brand-text">
+      <h1>SaúdeMapa Salvador</h1>
+      <span>Rede de Unidades de Saúde — BA</span>
+    </div>
+  </div>
+
+  <div class="search-wrap">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="searchInput" placeholder="Buscar unidade, bairro ou tipo...">
+  </div>
+
+  <div class="stats" id="statsBar">
+    
+    <div class="stat-pill"><span class="stat-dot" style="background:var(--hospital)"></span> <span id="countHospital">0</span> Hospitais</div>
+    <div class="stat-pill"><span class="stat-dot" style="background:var(--upa)"></span> <span id="countUpa">0</span> UPAs</div>
+    <div class="stat-pill"><span class="stat-dot" style="background:var(--ubs)"></span> <span id="countUbs">0</span> UBS/USF</div>
+    <div class="stat-pill"><span class="stat-dot" style="background:var(--policlinica)"></span> <span id="countPoli">0</span> Policlínicas</div>
+  </div>
+</header>
+
+<div class="main">
+  <div class="sidebar">
+    <div class="filters">
+      <div class="filters-title">Filtrar por tipo</div>
+      <div class="filter-btns">
+        <button class="filter-btn active" data-type="hospital" onclick="toggleFilter(this)">
+          <span class="dot" style="background:var(--hospital)"></span> Hospital
+        </button>
+        <button class="filter-btn active" data-type="upa" onclick="toggleFilter(this)">
+          <span class="dot" style="background:var(--upa)"></span> UPA 24h
+        </button>
+        <button class="filter-btn active" data-type="ubs" onclick="toggleFilter(this)">
+          <span class="dot" style="background:var(--ubs)"></span> UBS / USF
+        </button>
+        <button class="filter-btn active" data-type="policlinica" onclick="toggleFilter(this)">
+          <span class="dot" style="background:var(--policlinica)"></span> Policlínica
+        </button>
+        <button class="filter-btn active" data-type="maternidade" onclick="toggleFilter(this)">
+          <span class="dot" style="background:var(--maternidade)"></span> Maternidade
+        </button>
+        <button class="filter-btn active" data-type="caps" onclick="toggleFilter(this)">
+          <span class="dot" style="background:var(--caps)"></span> CAPS
+        </button>
+        <button class="filter-btn active" data-type="hospital_especializado" onclick="toggleFilter(this)">
+          <span class="dot" style="background:var(--especializado)"></span> Hosp. Esp.
+        </button>
+        <button class="filter-btn active" data-type="instituto" onclick="toggleFilter(this)">
+          <span class="dot" style="background:var(--instituto)"></span> Instituto
+        </button>
+        <button class="filter-btn active" data-type="outros" onclick="toggleFilter(this)">
+          <span class="dot" style="background:var(--outros)"></span> Outros
+        </button>
+      </div>
+    </div>
+
+    <div class="list-header">
+      <div class="list-count">Unidades: <span id="visibleCount">0</span></div>
+    </div>
+
+    <div class="units-list" id="unitsList"></div>
+  </div>
+
+  <div id="map"></div>
+</div>
+
+<!-- Info overlay -->
+<div class="popup-overlay" id="infoPanel">
+  <button class="popup-close" onclick="closePanel()">✕</button>
+  <div class="popup-type" id="pType"></div>
+  <div class="popup-name" id="pName"></div>
+  <div class="popup-row"><span class="ico">📍</span><span id="pAddr"></span></div>
+  <div class="popup-row"><span class="ico">🏘️</span><span id="pBairro"></span></div>
+  <div class="popup-row" id="pPhoneRow"><span class="ico">📞</span><span id="pPhone"></span></div>
+  <div class="popup-row" id="pDistritoRow"><span class="ico">🗺️</span><span id="pDistrito"></span></div>
+  <div class="popup-row" id="pLinkRow" style="display:none">
+    <span class="ico">🔗</span>
+    <span id="pLinkLabel" style="font-size:13px; color: var(--muted);">Link externo</span>
+  </div>
+  <div class="popup-actions">
+    <a class="btn-maps" id="pMapsLink" target="_blank">🗺️ Ver no Maps</a>
+    <a class="btn-link" id="pExternalLink" target="_blank" style="display:none">🔗 Acessar Link</a>
+    <a class="btn-maps" id="pFichaLink" target="_blank" style="display:none; background:linear-gradient(135deg,#9b72ff,#7c4dff);">📋 Ver Ficha</a>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
