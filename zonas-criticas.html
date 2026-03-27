@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zonas Críticas - Salvador - ArcGIS</title>
+
+    <script type="module" src="https://js.arcgis.com/5.0/embeddable-components/"></script>
+
+    <style>
+        /* Reset de CSS para garantir que nada escape da tela */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #f0f0f0;
+        }
+
+        /* Faz o componente ocupar exatamente o tamanho da janela do navegador */
+        arcgis-embedded-map {
+            display: block;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        /* Ajuste opcional: Esconder barras de rolagem que o componente possa criar */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Botão de voltar */
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 8px;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+        }
+
+        .back-button:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-2px);
+        }
+
+        /* Título */
+        .title-overlay {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(255, 0, 0, 0.9);
+            color: white;
+            border-radius: 8px;
+            padding: 10px 15px;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <button class="back-button" onclick="window.history.back()">← Voltar ao Mapa</button>
+
+    <div class="title-overlay">
+        🛑 Zonas Críticas de Saúde - Salvador
+    </div>
+
+    <arcgis-embedded-map
+        item-id="a1026f40bae447f6bdca3906f5c8d312"
+        theme="light"
+        time-zone-label-enabled
+        center="-38.48812842165289,-12.979918675311286"
+        scale="72223.819286"
+        portal-url="https://www.arcgis.com">
+    </arcgis-embedded-map>
+
+</body>
+</html>
