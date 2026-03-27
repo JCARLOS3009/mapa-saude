@@ -74,12 +74,12 @@ const unidades = [
   { id: 40, cnes: "0004162",  nome: "LACEN – Laboratório Central de Saúde Pública Prof. Gonçalo Muniz", tipo: "laboratorio", bairro: "Horto Florestal", endereco: "R. Waldemar Falcão, 123",                            telefone: "(71) 3116-5900", distrito: "Brotas",               sus: true,  link: "https://cnes2.datasus.gov.br/Mod_Conjunto.asp?VCo_Unidade=2927400004162", lat: -12.989252, lng: -38.488344 },
   { id: 41, cnes: "0003840",  nome: "Maternidade Albert Sabin",                                      tipo: "maternidade",      bairro: "Cajazeiras",      endereco: "Estr. do Coqueiro Grande, s/n",                      telefone: "(71) 3253-5350", distrito: "Cajazeiras",           sus: true,  link: "https://cnes2.datasus.gov.br/Mod_Conjunto.asp?VCo_Unidade=2927400003840", lat: -12.906660, lng: -38.375250 },
   { id: 42, cnes: "0004731",  nome: "Maternidade Climério de Oliveira",                              tipo: "maternidade",      bairro: "Nazaré",          endereco: "R. do Limoeiro, 137",                                telefone: "(71) 3283-9200", distrito: "Centro Histórico",     sus: true,  link: "https://cnes2.datasus.gov.br/Mod_Conjunto.asp?VCo_Unidade=2927400004731", lat: -12.975480, lng: -38.503950 },
-  { id: 43, cnes: "0004081", nome: "Maternidade Maria da Conceição de Jesus", tipo: "maternidade", bairro: "Coutos", endereco: "Av. Afrânio Peixoto, 1492", telefone: "(71) 3307-8602", distrito: "Subúrbio Ferroviário", sus: true, link: "https://cnes2.datasus.gov.br/Mod_Conjunto.asp?VCo_Unidade=2927400004081", lat: -12.848668672267738, lng: -38.47343574724253 },
+  { id: 43, cnes: "0004081",  nome: "Maternidade Maria da Conceição de Jesus",                       tipo: "maternidade",      bairro: "Coutos",          endereco: "Av. Afrânio Peixoto, 1492",                          telefone: "(71) 3307-8602", distrito: "Subúrbio Ferroviário", sus: true,  link: "https://cnes2.datasus.gov.br/Mod_Conjunto.asp?VCo_Unidade=2927400004081", lat: -12.871030, lng: -38.479540 },
   { id: 44, cnes: "3956369",  nome: "Maternidade Professor José Maria de Magalhães Neto",            tipo: "maternidade",      bairro: "Pau Miúdo",       endereco: "R. Marquês de Maricá, s/n",                          telefone: "(71) 3255-0810", distrito: "Liberdade",            sus: true,  link: "https://cnes2.datasus.gov.br/Mod_Conjunto.asp?VCo_Unidade=2927403956369", lat: -12.951150, lng: -38.487840 },
   { id: 45, cnes: "0004170",  nome: "Maternidade Tsylla Balbino",                                    tipo: "maternidade",      bairro: "Baixa de Quintas",endereco: "Ladeira Quintas dos Lázaros, s/n",                   telefone: "(71) 3116-2068", distrito: "Lib./Pau Miúdo",       sus: true,  link: "https://cnes2.datasus.gov.br/Mod_Conjunto.asp?VCo_Unidade=2927400004170", lat: -12.963490, lng: -38.494790 },
   { id: 46, cnes: "7613881",  nome: "Núcleo de Telessaúde do Estado da Bahia",                       tipo: "nucleo",           bairro: "CAB",             endereco: "4ª Avenida, 400",                                    telefone: "(71) 3115-3194", distrito: "Cabula/Beiru",         sus: true,  link: "https://cnes2.datasus.gov.br/Mod_Conjunto.asp?VCo_Unidade=2927407613881", lat: -12.944710, lng: -38.424591 },
   { id: 47, cnes: "4031407",  nome: "Núcleo Regional de Saúde Leste – Salvador Sede",                tipo: "nucleo",           bairro: "Centro",          endereco: "Rua Carlos Gomes, 266",                              telefone: "(71) 3116-9333", distrito: "Centro Histórico",     sus: true,  link: "https://cnes2.datasus.gov.br/Mod_Conjunto.asp?VCo_Unidade=2927404031407", lat: -12.979969, lng: -38.515033 },
-  { id: 48, cnes: "2942208", nome: "Policlínica de Escada", tipo: "policlinica", bairro: "Escada", endereco: "Av. Afrânio Peixoto, s/n", telefone: "0800 071 5353", distrito: "Subúrbio Ferroviário", sus: true, link: "https://cnes2.datasus.gov.br/Mod_Conjunto.asp?VCo_Unidade=2927402942208", lat: -12.883532639661233, lng: -38.48261449882826 },
+  { id: 48, cnes: "2942208",  nome: "Policlínica de Escada",                                         tipo: "policlinica",      bairro: "Escada",          endereco: "Av. Afrânio Peixoto, s/n",                           telefone: "0800 071 5353",  distrito: "Subúrbio Ferroviário", sus: true,  link: "https://cnes2.datasus.gov.br/Mod_Conjunto.asp?VCo_Unidade=2927402942208", lat: -12.863116, lng: -38.486242 },
   { id: 49, cnes: "2942585",  nome: "Policlínica de Narandiba",                                      tipo: "policlinica",      bairro: "Narandiba",       endereco: "Av. Edgard Santos, s/n",                             telefone: "0800 071 5353",  distrito: "Cabula/Beiru",         sus: true,  link: "https://cnes2.datasus.gov.br/Mod_Conjunto.asp?VCo_Unidade=2927402942585", lat: -12.962459, lng: -38.474239 },
   { id: 50, cnes: "7106521",  nome: "Secretaria da Saúde do Estado da Bahia",                        tipo: "secretaria",       bairro: "CAB",             endereco: "4ª Av. Centro Adm. da Bahia, 400",                   telefone: "(71) 3115-4180", distrito: "Cabula/Beiru",         sus: true,  link: "https://cnes2.datasus.gov.br/Mod_Conjunto.asp?VCo_Unidade=2927407106521", lat: -12.949021, lng: -38.432585 },
   { id: 51, cnes: "9709037",  nome: "Serviço de Verificação de Óbito de Salvador e RMS",             tipo: "servico",          bairro: "Garcia",          endereco: "Av. Centenário (Complexo IML), s/n",                 telefone: "(71) 3116-4601", distrito: "Centro Histórico",     sus: true,  link: "https://cnes2.datasus.gov.br/Mod_Conjunto.asp?VCo_Unidade=2927409709037", lat: -12.990426, lng: -38.508546 },
@@ -313,34 +313,7 @@ function boundsToGeoJSON(d) {
   };
 }
 
-async function loadDistrictsGeoJSON() {
-  try {
-    const response = await fetch('mapa-saude/distritos-sanitarios.geojson');
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    const data = await response.json();
-    if (!data.features || !Array.isArray(data.features)) throw new Error('GeoJSON inválido');
-
-    const lookupNome = {};
-    distritos.forEach(d => lookupNome[d.nome.toLowerCase()] = d);
-
-    data.features.forEach(feature => {
-      const featureNome = (feature.properties?.nome || feature.properties?.NOME || '').toString().toLowerCase();
-      if (feature.properties?.id) {
-        const dist = distritos.find(d => d.id === feature.properties.id);
-        if (dist) dist.geojson = feature;
-      }
-      if (!lookupNome[featureNome]) return;
-      lookupNome[featureNome].geojson = feature;
-    });
-
-    console.info('GeoJSON de distritos carregado (mapa).');
-  } catch (error) {
-    console.warn('GeoJSON distritos não carregado, usando bounds como fallback:', error.message);
-  }
-}
-
 // Adiciona GeoJSON automaticamente caso não tenha
-// (ou se não existir arquivo externo, usa bounds aproximado)
 distritos.forEach(d => {
   if (!d.geojson) {
     const feature = boundsToGeoJSON(d);
@@ -690,11 +663,8 @@ function clearCriticalAreas() {
 }
 
 function toggleCriticalAreas() {
-  criticalMode = !criticalMode;
-  document.getElementById('btnCritical').classList.toggle('active', criticalMode);
-
-  if (criticalMode) drawCriticalAreas();
-  else clearCriticalAreas();
+  // Redireciona para a página de zonas críticas com ArcGIS
+  window.location.href = 'zonas-criticas.html';
 }
 
 // ─── PAINEL DISTRITO ──────────────────────────────────────────────────────────
@@ -946,10 +916,5 @@ document.getElementById('searchInput').addEventListener('input', e => {
 });
 
 // ─── INIT ─────────────────────────────────────────────────────────────────────
-async function init() {
-  await loadDistrictsGeoJSON();
-  renderList();
-  updateCriticalModel();
-}
-
-init();
+renderList();
+updateCriticalModel();
