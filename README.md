@@ -164,6 +164,7 @@ O relatório crítico exibe:
 
 - substituir `distritos` por GeoJSON com polígonos reais
 - https://experience.arcgis.com/experience/e4e944eec8714681940f01e06cc10783/page/In%C3%ADcio
+- https://www.arcgis.com/apps/mapviewer/index.html?webmap=a1026f40bae447f6bdca3906f5c8d312
 - adicionar dados de sistema de saúde em tempo real (API)
 - integrar clusters de mapa e zoom em região crítica
 
