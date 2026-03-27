@@ -1,29 +1,29 @@
 
 // ─── TIPO CONFIG ──────────────────────────────────────────────────────────────
 const typeConfig = {
-  hospital:               { color: '#ff6b6b', emoji: '🏥', label: 'Hospital',            group: 'hospital' },
-  hospital_especializado: { color: '#74c0fc', emoji: '🏨', label: 'Hosp. Especializado',  group: 'hospital_especializado' },
-  hospital_psiquiatrico:  { color: '#74c0fc', emoji: '🧠', label: 'Hosp. Psiquiátrico',   group: 'hospital_especializado' },
-  upa:                    { color: '#ffa94d', emoji: '🚑', label: 'UPA 24h',              group: 'upa' },
-  ubs:                    { color: '#4dabf7', emoji: '⚕️', label: 'UBS / USF',            group: 'ubs' },
-  policlinica:            { color: '#9b72ff', emoji: '🔬', label: 'Policlínica',           group: 'policlinica' },
-  maternidade:            { color: '#f783ac', emoji: '👶', label: 'Maternidade',           group: 'maternidade' },
-  caps:                   { color: '#63e6be', emoji: '🧩', label: 'CAPS',                 group: 'caps' },
-  instituto:              { color: '#a9e34b', emoji: '🔭', label: 'Instituto',             group: 'instituto' },
-  centro_especializado:   { color: '#74c0fc', emoji: '🩺', label: 'Centro Especializado', group: 'outros' },
-  oncologia:              { color: '#ff8787', emoji: '🎗️', label: 'Oncologia',             group: 'outros' },
-  transplantes:           { color: '#ffd43b', emoji: '💉', label: 'Transplantes',          group: 'outros' },
-  reabilitacao:           { color: '#69db7c', emoji: '♿', label: 'Reabilitação',          group: 'outros' },
-  hemoterapia:            { color: '#ff6b6b', emoji: '🩸', label: 'Hemoterapia',           group: 'outros' },
-  farmacia:               { color: '#69db7c', emoji: '💊', label: 'Farmácia',              group: 'outros' },
-  laboratorio:            { color: '#ffd43b', emoji: '🧪', label: 'Laboratório',           group: 'outros' },
-  fundacao:               { color: '#adb5bd', emoji: '🏛️', label: 'Fundação',              group: 'outros' },
-  nucleo:                 { color: '#adb5bd', emoji: '📡', label: 'Núcleo',                group: 'outros' },
-  regulacao:              { color: '#adb5bd', emoji: '📋', label: 'Regulação',             group: 'outros' },
-  secretaria:             { color: '#adb5bd', emoji: '🏢', label: 'Secretaria',            group: 'outros' },
-  administracao:          { color: '#adb5bd', emoji: '🏢', label: 'Administração',         group: 'outros' },
-  servico:                { color: '#adb5bd', emoji: '🔧', label: 'Serviço',               group: 'outros' },
-  unidade_movel:          { color: '#ffa94d', emoji: '🚐', label: 'Unidade Móvel',         group: 'outros' },
+  hospital:               { color: '#ff6b6b', emoji: '🏥', label: 'Hospital',            group: 'hospital', complexidade: 'secundario' },
+  hospital_especializado: { color: '#74c0fc', emoji: '🏨', label: 'Hosp. Especializado',  group: 'hospital_especializado', complexidade: 'secundario' },
+  hospital_psiquiatrico:  { color: '#74c0fc', emoji: '🧠', label: 'Hosp. Psiquiátrico',   group: 'hospital_especializado', complexidade: 'secundario' },
+  upa:                    { color: '#ffa94d', emoji: '🚑', label: 'UPA 24h',              group: 'upa', complexidade: 'secundario' },
+  ubs:                    { color: '#4dabf7', emoji: '⚕️', label: 'UBS / USF',            group: 'ubs', complexidade: 'primario' },
+  policlinica:            { color: '#9b72ff', emoji: '🔬', label: 'Policlínica',           group: 'policlinica', complexidade: 'primario' },
+  maternidade:            { color: '#f783ac', emoji: '👶', label: 'Maternidade',           group: 'maternidade', complexidade: 'secundario' },
+  caps:                   { color: '#63e6be', emoji: '🧩', label: 'CAPS',                 group: 'caps', complexidade: 'primario' },
+  instituto:              { color: '#a9e34b', emoji: '🔭', label: 'Instituto',             group: 'instituto', complexidade: 'terciario' },
+  centro_especializado:   { color: '#74c0fc', emoji: '🩺', label: 'Centro Especializado', group: 'outros', complexidade: 'secundario' },
+  oncologia:              { color: '#ff8787', emoji: '🎗️', label: 'Oncologia',             group: 'outros', complexidade: 'terciario' },
+  transplantes:           { color: '#ffd43b', emoji: '💉', label: 'Transplantes',          group: 'outros', complexidade: 'terciario' },
+  reabilitacao:           { color: '#69db7c', emoji: '♿', label: 'Reabilitação',          group: 'outros', complexidade: 'terciario' },
+  hemoterapia:            { color: '#ff6b6b', emoji: '🩸', label: 'Hemoterapia',           group: 'outros', complexidade: 'terciario' },
+  farmacia:               { color: '#69db7c', emoji: '💊', label: 'Farmácia',              group: 'outros', complexidade: 'primario' },
+  laboratorio:            { color: '#ffd43b', emoji: '🧪', label: 'Laboratório',           group: 'outros', complexidade: 'primario' },
+  fundacao:               { color: '#adb5bd', emoji: '🏛️', label: 'Fundação',              group: 'outros', complexidade: 'primario' },
+  nucleo:                 { color: '#adb5bd', emoji: '📡', label: 'Núcleo',                group: 'outros', complexidade: 'primario' },
+  regulacao:              { color: '#adb5bd', emoji: '📋', label: 'Regulação',             group: 'outros', complexidade: 'primario' },
+  secretaria:             { color: '#adb5bd', emoji: '🏢', label: 'Secretaria',            group: 'outros', complexidade: 'primario' },
+  administracao:          { color: '#adb5bd', emoji: '🏢', label: 'Administração',         group: 'outros', complexidade: 'primario' },
+  servico:                { color: '#adb5bd', emoji: '🔧', label: 'Serviço',               group: 'outros', complexidade: 'primario' },
+  unidade_movel:          { color: '#ffa94d', emoji: '🚐', label: 'Unidade Móvel',         group: 'outros', complexidade: 'primario' },
 };
 
 function getCfg(tipo) {
@@ -79,7 +79,7 @@ const unidades = [
   { id: 45, cnes: "0004170",  nome: "Maternidade Tsylla Balbino",                                    tipo: "maternidade",      bairro: "Baixa de Quintas",endereco: "Ladeira Quintas dos Lázaros, s/n",                   telefone: "(71) 3116-2068", distrito: "Lib./Pau Miúdo",       sus: true,  link: "https://cnes2.datasus.gov.br/Mod_Conjunto.asp?VCo_Unidade=2927400004170", lat: -12.963490, lng: -38.494790 },
   { id: 46, cnes: "7613881",  nome: "Núcleo de Telessaúde do Estado da Bahia",                       tipo: "nucleo",           bairro: "CAB",             endereco: "4ª Avenida, 400",                                    telefone: "(71) 3115-3194", distrito: "Cabula/Beiru",         sus: true,  link: "https://cnes2.datasus.gov.br/Mod_Conjunto.asp?VCo_Unidade=2927407613881", lat: -12.944710, lng: -38.424591 },
   { id: 47, cnes: "4031407",  nome: "Núcleo Regional de Saúde Leste – Salvador Sede",                tipo: "nucleo",           bairro: "Centro",          endereco: "Rua Carlos Gomes, 266",                              telefone: "(71) 3116-9333", distrito: "Centro Histórico",     sus: true,  link: "https://cnes2.datasus.gov.br/Mod_Conjunto.asp?VCo_Unidade=2927404031407", lat: -12.979969, lng: -38.515033 },
-  { id: 48, cnes: "2942208",  nome: "Policlínica de Escada",                                         tipo: "policlinica",      bairro: "Escada",          endereco: "Av. Afrânio Peixoto, s/n",                           telefone: "0800 071 5353",  distrito: "Subúrbio Ferroviário", sus: true,  link: "https://cnes2.datasus.gov.br/Mod_Conjunto.asp?VCo_Unidade=2927402942208", lat: -12.863116, lng: -38.486242 },
+  { id: 48, cnes: "2942208", nome: "Policlínica de Escada", tipo: "policlinica", bairro: "Escada", endereco: "Av. Afrânio Peixoto, s/n", telefone: "0800 071 5353", distrito: "Subúrbio Ferroviário", sus: true, link: "https://cnes2.datasus.gov.br/Mod_Conjunto.asp?VCo_Unidade=2927402942208", lat: -12.883532639661233, lng: -38.48261449882826 },
   { id: 49, cnes: "2942585",  nome: "Policlínica de Narandiba",                                      tipo: "policlinica",      bairro: "Narandiba",       endereco: "Av. Edgard Santos, s/n",                             telefone: "0800 071 5353",  distrito: "Cabula/Beiru",         sus: true,  link: "https://cnes2.datasus.gov.br/Mod_Conjunto.asp?VCo_Unidade=2927402942585", lat: -12.962459, lng: -38.474239 },
   { id: 50, cnes: "7106521",  nome: "Secretaria da Saúde do Estado da Bahia",                        tipo: "secretaria",       bairro: "CAB",             endereco: "4ª Av. Centro Adm. da Bahia, 400",                   telefone: "(71) 3115-4180", distrito: "Cabula/Beiru",         sus: true,  link: "https://cnes2.datasus.gov.br/Mod_Conjunto.asp?VCo_Unidade=2927407106521", lat: -12.949021, lng: -38.432585 },
   { id: 51, cnes: "9709037",  nome: "Serviço de Verificação de Óbito de Salvador e RMS",             tipo: "servico",          bairro: "Garcia",          endereco: "Av. Centenário (Complexo IML), s/n",                 telefone: "(71) 3116-4601", distrito: "Centro Histórico",     sus: true,  link: "https://cnes2.datasus.gov.br/Mod_Conjunto.asp?VCo_Unidade=2927409709037", lat: -12.990426, lng: -38.508546 },
@@ -426,13 +426,14 @@ function computeCriticalScore(d) {
   const leitosGap = Math.max(0, 1 - Math.min(leitos1k / maxLeitos1k, 1)) * 100;
   const densityGap = Math.max(0, 1 - Math.min(density / maxDensity, 1)) * 100;
 
-  const score = (
+  const scoreRuim = (
     criticalModel.pesoCobertura * coberturaFalta +
     criticalModel.pesoLeitos * leitosGap +
     criticalModel.pesoDensidade * densityGap
   ) * (100 / (criticalModel.pesoCobertura + criticalModel.pesoLeitos + criticalModel.pesoDensidade));
 
-  return Math.min(100, Math.max(0, Math.round(score)));
+  // Inverter: score baixo = ruim
+  return Math.min(100, Math.max(0, Math.round(100 - scoreRuim)));
 }
 
 function updateCriticalModel() {
@@ -452,6 +453,87 @@ function updateCriticalModel() {
   if (criticalMode) {
     drawCriticalAreas();
   }
+
+  // Atualizar relatório se estiver aberto
+  if (document.getElementById('criticalReportPanel').classList.contains('visible')) {
+    renderCriticalReport();
+  }
+}
+
+function toggleCriticalReport() {
+  const panel = document.getElementById('criticalReportPanel');
+  panel.classList.toggle('visible');
+  document.getElementById('btnCriticalReport').classList.toggle('active');
+  if (panel.classList.contains('visible')) {
+    renderCriticalReport();
+  }
+}
+
+function renderCriticalReport() {
+  const content = document.getElementById('criticalReportContent');
+  const report = distritos.map(d => {
+    const score = computeCriticalScore(d);
+    const status = score <= 30 ? 'Crítica' : score <= 60 ? 'Média' : 'Boa';
+    const badge = score <= 30 ? 'badge-high' : score <= 60 ? 'badge-medium' : 'badge-low';
+    return {
+      nome: d.nome,
+      cobertura: d.cobertura_esf,
+      leitos1k: ((d.leitos_sus / d.populacao) * 1000).toFixed(2),
+      densidade: metricas.densidade.calcular(d).toFixed(2),
+      score,
+      status,
+      badge
+    };
+  }).sort((a, b) => a.score - b.score); // Ordenar por score crescente (baixo primeiro = pior)
+
+  const rows = report.map(r => `
+    <tr>
+      <td>${r.nome}</td>
+      <td>${r.cobertura}%</td>
+      <td>${r.leitos1k}</td>
+      <td>${r.densidade}</td>
+      <td><span class="badge ${r.badge}">${r.score}</span></td>
+      <td>${r.status}</td>
+    </tr>
+  `).join('');
+
+  // Estatísticas por complexidade
+  const complexStats = { primario: { total: 0, critico: 0 }, secundario: { total: 0, critico: 0 }, terciario: { total: 0, critico: 0 } };
+  distritos.forEach(d => {
+    const unidadesDist = unidades.filter(u => normalizaDistrito(u.distrito) === d.id);
+    const complexidades = unidadesDist.map(u => getCfg(u.tipo).complexidade);
+    const complexSet = new Set(complexidades);
+    complexSet.forEach(comp => {
+      if (complexStats[comp]) {
+        complexStats[comp].total++;
+        if (computeCriticalScore(d) <= 30) complexStats[comp].critico++;
+      }
+    });
+  });
+
+  const complexHtml = Object.entries(complexStats).map(([comp, stats]) => 
+    `<div>• ${comp.charAt(0).toUpperCase() + comp.slice(1)}: ${stats.total} distritos, ${stats.critico} críticos</div>`
+  ).join('');
+
+  const criticalCount = report.filter(r => r.score <= 30).length;
+
+  content.innerHTML = `
+    <p>Modelo crítico atual (normalizado):
+    Cobertura ESF × ${Math.round(criticalModel.pesoCobertura*100)}%,
+    Leitos × ${Math.round(criticalModel.pesoLeitos*100)}%,
+    Densidade × ${Math.round(criticalModel.pesoDensidade*100)}%.</p>
+    <p>Zonas críticas (score ≤ 30) : ${criticalCount} distritos.</p>
+    <p><strong>Distribuição por complexidade:</strong></p>
+    ${complexHtml}
+    <div style="max-height:250px;overflow:auto;">
+      <table>
+        <thead>
+          <tr><th>Distrito</th><th>cobertura</th><th>leitos/1k</th><th>densidade</th><th>score</th><th>situação</th></tr>
+        </thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>
+  `;
 }
 
 // Normaliza o campo distrito da unidade para o id do distrito
@@ -502,6 +584,8 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
 let viewMode       = 'unidades'; // 'unidades' | 'isovalor'
 let currentMetric  = 'densidade';
 let activeFilters  = new Set(['hospital','upa','ubs','policlinica','maternidade','caps','hospital_especializado','instituto','outros']);
+let activeComplexities = new Set(['primario', 'secundario', 'terciario']);
+let criticalThreshold = 30; // Score máximo para considerar crítico (baixo = ruim)
 let searchQuery    = '';
 let selectedId     = null;
 let criticalMode   = false;
@@ -641,7 +725,9 @@ function drawCriticalAreas() {
   const maxScore = Math.max(...critScores.map(s => s.score), 1);
 
   critScores.forEach(({ d, score }) => {
-    const color = score < 40 ? '#FFC107' : score < 70 ? '#FF5722' : '#D32F2F';
+    if (score > criticalThreshold) return; // Só desenhar se score <= threshold (baixo = ruim)
+
+    const color = score < 20 ? '#D32F2F' : score < 30 ? '#FF5722' : '#FFC107';
 
     const style = {
       color: color,
@@ -654,7 +740,7 @@ function drawCriticalAreas() {
 
     const popupHtml = `
       <strong>${d.nome}</strong><br>
-      <strong>Crítico:</strong> ${score}/100<br>
+      <strong>Score Crítico:</strong> ${score}/100 (baixo = ruim)<br>
       <strong>Cobertura ESF:</strong> ${d.cobertura_esf}%<br>
       <strong>Leitos/1k:</strong> ${((d.leitos_sus/d.populacao)*1000).toFixed(2)}<br>
       <strong>Densidade:</strong> ${metricas.densidade.calcular(d)} un/km²
@@ -889,6 +975,8 @@ function renderList() {
   const filtered = unidades.filter(u => {
     const group = typeToGroup[u.tipo] || 'outros';
     if (!activeFilters.has(group)) return false;
+    const cfg = getCfg(u.tipo);
+    if (!activeComplexities.has(cfg.complexidade)) return false;
     if (q && !u.nome.toLowerCase().includes(q) && !u.bairro.toLowerCase().includes(q) && !getCfg(u.tipo).label.toLowerCase().includes(q)) return false;
     return true;
   });
@@ -934,6 +1022,19 @@ function toggleFilter(btn) {
     btn.classList.remove('active');
   } else {
     activeFilters.add(tipo);
+    btn.classList.add('active');
+  }
+  renderList();
+}
+
+function toggleComplexity(btn) {
+  const comp = btn.dataset.complexity;
+  if (activeComplexities.has(comp)) {
+    if (activeComplexities.size <= 1) return;
+    activeComplexities.delete(comp);
+    btn.classList.remove('active');
+  } else {
+    activeComplexities.add(comp);
     btn.classList.add('active');
   }
   renderList();
